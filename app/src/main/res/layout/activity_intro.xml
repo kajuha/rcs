@@ -10,21 +10,6 @@ android:gravity="center">
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="A"
-            android:id="@+id/bt_a"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="B"
-            android:id="@+id/bt_b"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="C"
-            android:id="@+id/bt_c"/>
     </LinearLayout>
 
     <LinearLayout

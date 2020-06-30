@@ -39,70 +39,70 @@ public class IntroActivity extends AppCompatActivity {
         }
         setContentView(R.layout.activity_intro);
 
-        Button btA = (Button)findViewById(R.id.bt_a);
-        Button btB = (Button)findViewById(R.id.bt_b);
-        Button btC = (Button)findViewById(R.id.bt_c);
-
-        btA.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    File file = new File("ip.txt");
-
-                    BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
-
-                    String text = "test file write";
-                    bufferedWriter.write(text);
-                    bufferedWriter.newLine();
-
-                    bufferedWriter.close();
-
-                    Toast.makeText(getApplicationContext(), "file write", Toast.LENGTH_LONG).show();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
-        btB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    File file = new File("ip.txt");
-
-                    BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-
-                    String text = bufferedReader.readLine();
-
-                    bufferedReader.close();
-
-                    Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
-        btC.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(IntroActivity.this, MainActivity.class));
-                finish();
-            }
-        });
-
-//        mRunnable = new Runnable() {
+//        Button btA = (Button)findViewById(R.id.bt_a);
+//        Button btB = (Button)findViewById(R.id.bt_b);
+//        Button btC = (Button)findViewById(R.id.bt_c);
+//
+//        btA.setOnClickListener(new View.OnClickListener() {
 //            @Override
-//            public void run() {
-//                mHandler.removeCallbacks(mRunnable);
+//            public void onClick(View v) {
+//                try {
+//                    File file = new File("ip.txt");
+//
+//                    BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
+//
+//                    String text = "test file write";
+//                    bufferedWriter.write(text);
+//                    bufferedWriter.newLine();
+//
+//                    bufferedWriter.close();
+//
+//                    Toast.makeText(getApplicationContext(), "file write", Toast.LENGTH_LONG).show();
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        });
+//
+//        btB.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                try {
+//                    File file = new File("ip.txt");
+//
+//                    BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+//
+//                    String text = bufferedReader.readLine();
+//
+//                    bufferedReader.close();
+//
+//                    Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        });
+//
+//        btC.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
 //                startActivity(new Intent(IntroActivity.this, MainActivity.class));
 //                finish();
-//
-//                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 //            }
-//        };
-//
-//        mHandler = new Handler();
-//        mHandler.postDelayed(mRunnable, 2000);
+//        });
+
+        mRunnable = new Runnable() {
+            @Override
+            public void run() {
+                mHandler.removeCallbacks(mRunnable);
+                startActivity(new Intent(IntroActivity.this, MainActivity.class));
+                finish();
+
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            }
+        };
+
+        mHandler = new Handler();
+        mHandler.postDelayed(mRunnable, 2000);
     }
 }

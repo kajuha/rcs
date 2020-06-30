@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         WebView webView = (WebView) findViewById(R.id.webView);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
-        String url = "http://192.168.2.19";
+        String url = "http://192.168.0.5";
 
         progressBar.setIndeterminate(false);
         progressBar.setMax(100);
